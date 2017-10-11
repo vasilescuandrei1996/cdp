@@ -1,0 +1,6 @@
+---
+- hosts: docker-host
+  roles:
+    - mfp
+  sudo: yes
+  gather_facts: no 
