@@ -1,0 +1,12 @@
+---
+- hosts: docker-host
+  vars:
+    app_name: td
+    docker_image_tag: td
+    container_tag: td
+    app_port: 8081
+    app_mantainer: vasilescuandrei
+  roles:
+    - common-deploy
+  gather_facts: no
+
