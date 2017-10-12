@@ -1,5 +1,0 @@
----
-- hosts: docker-host
-  roles:
-    - mfp
-  gather_facts: no

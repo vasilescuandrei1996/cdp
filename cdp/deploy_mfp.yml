@@ -1,0 +1,13 @@
+---
+- hosts: docker-host
+  vars:
+    app_folder_name: mfp
+    docker_image_tag: mfp
+    container_tag: mfp
+    app_port: 8080
+    app_mantainer: vasilescuandrei
+  roles:
+    - common-deploy
+  gather_facts: no
+
+
