@@ -1,1 +1,1 @@
-docker-host ansible_ssh_host=192.168.1.100 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+docker-host ansible_ssh_host=192.168.101.172 ansible_ssh_user=andrei ansible_ssh_pass=andrei

@@ -1,9 +1,9 @@
 ---
 - name: Copy jar to docker-host
-  copy: src=management-of-fresh-products-1.0.0-SNAPSHOT.jar  dest=/home/mfp/mfp.jar
+  copy: src=app.jar  dest=/etc/mfp/app.jar
 
 - name: Copy Dockerfile to docker-host
-  copy: src=Dockerfile dest=/home/mfp
+  copy: src=Dockerfile dest=/etc/mfp
 
 - name: Stop and remove container
   command: docker rm -f mfp
@@ -14,7 +14,7 @@
   ignore_errors: yes
 
 - name: Create docker image
-  command: docker build -f /home/mfp/Dockerfile -t mfp /home/mfp
+  command: docker build -f /etc/mfp/Dockerfile -t mfp /etc/mfp
 
 - name: Start container
   command: docker run -p 8080:8080 --name mfp -d mfp

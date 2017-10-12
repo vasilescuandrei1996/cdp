@@ -1,6 +1,6 @@
 FROM anapsix/alpine-java
 MAINTAINER vasilescuandrei
-COPY mfp.jar /home/mfp/mfp.jar
+COPY app.jar /etc/mfp/app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/home/mfp/mfp.jar"]
+ENTRYPOINT ["java","-jar","/etc/mfp/app.jar"]
 
