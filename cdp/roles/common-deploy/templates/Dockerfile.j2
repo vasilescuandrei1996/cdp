@@ -1,5 +1,5 @@
 FROM anapsix/alpine-java
 MAINTAINER {{ app_mantainer }}
-COPY app.jar /etc/{{app_folder_name }}/app.jar
+COPY {{ app_name }}.jar /etc/{{ app_name }}.jar
 EXPOSE {{ app_port }}
-ENTRYPOINT ["java","-jar","/etc/{{app_folder_name }}/app.jar"]
+ENTRYPOINT ["java","-jar","/etc/{{ app_name }}.jar"]

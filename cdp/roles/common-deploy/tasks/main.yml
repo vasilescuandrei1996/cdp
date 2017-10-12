@@ -1,9 +1,9 @@
 ---
 - name: Copy jar to docker-host
-  copy: src=app.jar  dest=/etc/{{ app_folder_name }}/app.jar
+  copy: src=app.jar  dest=/etc/apps/{{ app_name }}.jar
 
 - name: Copy Dockerfile to docker-host
-  template: src=Dockerfile.j2 dest=/etc/{{ app_folder_name }}
+  template: src=Dockerfile.j2 dest=/etc/apps/Dockerfile
 
 - name: Stop and remove container
   command: docker rm -f {{ container_tag }}
@@ -14,7 +14,7 @@
   ignore_errors: yes
 
 - name: Create docker image
-  command: docker build -f /etc/{{ app_folder_name }}/Dockerfile -t {{ docker_image_tag }}  /etc/{{ app_folder_name }}
+  command: docker build -f /etc/apps/Dockerfile -t {{ docker_image_tag }}  /etc/apps/
 
 - name: Start container
   command: docker run -p {{ app_port }}:{{ app_port }} --name {{ container_tag }} -d {{ docker_image_tag }}
